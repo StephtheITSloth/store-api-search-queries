@@ -1,10 +1,14 @@
+require('dotenv').config()
+require('express-async-errors')
+
 const express = require('express')
+
 const mongoose = require('mongoose')
 const connectDB = require('./db/connect')
 const productsRouter = require('./routes/products')
 const errorHandlerMiddleware = require('./middleware/error-handler')
 const notFoundMiddleware = require('./middleware/not-found')
-require('dotenv').config()
+
 const port = process.env.PORT || 3000
 const app = express()
 
